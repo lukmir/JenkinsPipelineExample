@@ -24,7 +24,7 @@ node {
       "files": [
         {
           "pattern": "target/*.war",
-          "target": "example-project/${BUILD_NUMBER}/",
+          "target": "/${BUILD_NUMBER}/",
           "props": "Integration-Tested=Yes;Performance-Tested=No"
         }
       ]

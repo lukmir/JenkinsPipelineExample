@@ -7,9 +7,9 @@ node {
 
     stage('Build & Unit test') {
         if (isUnix()) {
-            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+            sh "'${mvnHome}/bin/mvnw' -Dmaven.test.failure.ignore clean package"
         } else {
-            bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+            bat(/"${mvnHome}\bin\mvnw.cmd" -Dmaven.test.failure.ignore clean package/)
         }
         junit '**/target/surefire-reports/TEST-*.xml'
     }

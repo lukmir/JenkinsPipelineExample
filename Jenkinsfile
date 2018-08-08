@@ -11,6 +11,8 @@ node {
         } else {
             bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
         }
+
+
         junit '**/target/surefire-reports/TEST-*.xml'
     }
 

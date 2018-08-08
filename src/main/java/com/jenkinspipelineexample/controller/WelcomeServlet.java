@@ -12,11 +12,10 @@ import java.util.logging.Logger;
 @WebServlet(urlPatterns = "/")
 public class WelcomeServlet extends HttpServlet {
 
-    private Logger logger = Logger.getLogger(getClass().getName());
-
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
+        Logger logger = Logger.getLogger(getClass().getName());
         httpServletResponse.setContentType("text/html");
 
         try {

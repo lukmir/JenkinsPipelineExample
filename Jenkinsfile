@@ -18,5 +18,17 @@ node {
         archive 'target/*.jar'
     }
 
-
+    stage ('Publish in artifactory'){
+        def server = Artifactory.newServer url: 'http://localhost:8081/artifactory/example-project/', credentialsId: 'artfactory-account'
+        def uploadSpec = """{
+      "files": [
+        {
+          "pattern": "target/*.war",
+          "target": "example-project/${BUILD_NUMBER}/",
+          "props": "Integration-Tested=Yes;Performance-Tested=No"
+        }
+      ]
+    }"""
+        server.upload(uploadSpec)
+    }
 }

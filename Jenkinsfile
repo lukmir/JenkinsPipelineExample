@@ -1,7 +1,7 @@
 node {
     def mvnHome
     stage('checkout') {
-        scm checkout
+        git 'https://github.com/lukmir/JenkinsPipelineExample.git'
         mvnHome = tool 'M3'
     }
 
